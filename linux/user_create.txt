@@ -1,0 +1,11 @@
+# To create user 
+sudo useradd -m ubuntu
+
+# To give password authentication to created user
+sudo passwd ubuntu
+
+# To switch user
+su ubuntu
+
+# Add the User to the Sudo Group (optional)
+sudo usermod -aG sudo ubuntu

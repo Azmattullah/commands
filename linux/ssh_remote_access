@@ -1,0 +1,15 @@
+# Allow this in, sudo vim /etc/ssh/sshd_config
+sudo vim /etc/ssh/sshd_config
+PubkeyAuthentication yes
+PasswordAuthentication yes
+PermitEmptyPasswords no
+KbdInteractiveAuthentication yes  # Fix: Change from 'no' to 'yes'
+UsePAM yes
+AllowUsers ubuntu
+
+PermitRootLogin yes # Only for root login
+
+
+# After all the change restart the ssh
+sudo systemctl restart ssh
+
