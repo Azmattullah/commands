@@ -1,20 +1,20 @@
 # MySQL Documentation:
 <br>
 
-## Install MariaDB Server
+### Install MariaDB Server
 
 ```bash
 sudo apt install mariadb-server
 ```
 
-## Enable and start MariaDB service
+### Enable and start MariaDB service
 
 ```bash
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
 ```
 
-## Secure MariaDB installation
+### Secure MariaDB installation
 
 ```bash
 sudo mysql_secure_installation
@@ -27,15 +27,14 @@ During the setup:
 * Disallow remote root login
 * Remove the test database
 
-## Log in to MariaDB
+### Log in to MariaDB
 
 ```bash
 sudo mysql -u root -p
 ```
 
----
 
-## Create a new MariaDB user
+### Create a new MariaDB user
 
 ```sql
 CREATE USER 'username'@'hostname' IDENTIFIED BY 'password';
@@ -47,19 +46,19 @@ CREATE USER 'username'@'hostname' IDENTIFIED BY 'password';
 CREATE USER 'azmat'@'%' IDENTIFIED BY '12345678';
 ```
 
-## Grant all privileges to the user
+### Grant all privileges to the user
 
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'azmat'@'%' WITH GRANT OPTION;
 ```
 
-## Grant privileges for a specific database
+### Grant privileges for a specific database
 
 ```sql
 GRANT ALL PRIVILEGES ON mydb.* TO 'john'@'%' WITH GRANT OPTION;
 ```
 
-## Apply changes and exit
+### Apply changes and exit
 
 ```sql
 FLUSH PRIVILEGES;

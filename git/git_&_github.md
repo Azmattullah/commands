@@ -1,19 +1,21 @@
 # Git and GitHub Documentation:
 <br>
 
-## Install Git
+## Git Common used Commands
+
+### Install Git
 
 ```bash
 sudo apt install git -y
 ```
 
-## Check Git version
+### Check Git version
 
 ```bash
 git --version
 ```
 
-## Configure Git user details
+### Configure Git user details
 
 ```bash
 git config --global user.name "Your Name"
@@ -21,7 +23,7 @@ git config --global user.email "your_email@example.com"
 ```
 
 
-## Clone a remote repository
+### Clone a remote repository
 
 ```bash
 git clone <repository_url>
@@ -34,14 +36,14 @@ git clone https://github.com/azmat711/myproject.git
 ```
 
 
-## Initialize a new Git repository in local directory
+### Initialize a new Git repository in local directory
 
 ```bash
 git init
 ```
 
 
-## Connect local repository to remote GitHub repo
+### Connect local repository to remote GitHub repo
 
 ```bash
 git remote add origin <repository_url>
@@ -54,20 +56,20 @@ git remote add origin https://github.com/azmat711/myproject.git
 ```
 
 
-## Verify remote connection
+### Verify remote connection
 
 ```bash
 git remote -v
 ```
 
 
-## Check current status of your repo
+### Check current status of your repo
 
 ```bash
 git status
 ```
 
-## Stage files for commit
+### Stage files for commit
 
 ```bash
 git add <file_name>
@@ -79,13 +81,13 @@ git add <file_name>
 git add .
 ```
 
-## Commit changes with a message
+### Commit changes with a message
 
 ```bash
 git commit -m "Initial commit"
 ```
 
-## Push local changes to GitHub
+### Push local changes to GitHub
 
 ```bash
 git push origin main
@@ -98,7 +100,7 @@ git push -u origin main
 ```
 
 
-## Pull updates from GitHub to local
+### Pull updates from GitHub to local
 
 ```bash
 git pull origin main
@@ -106,40 +108,40 @@ git pull origin main
 
 <br><br>
 
-# Create and use branches
+## Create and use branches
 
-## List all branches
+### List all branches
 
 ```bash
 git branch
 ```
 
-## Create a new branch
+### Create a new branch
 
 ```bash
 git branch <branch_name>
 ```
 
-## Switch to another branch
+### Switch to another branch
 
 ```bash
 git checkout <branch_name>
 ```
 
-## Create and switch in one command
+### Create and switch in one command
 
 ```bash
 git checkout -b <branch_name>
 ```
 
-## Merge a branch into main
+### Merge a branch into main
 
 ```bash
 git checkout main
 git merge <branch_name>
 ```
 
-## Delete a branch
+### Delete a branch
 
 ```bash
 git branch -d <branch_name>
@@ -147,7 +149,7 @@ git branch -d <branch_name>
 
 <br><br>
 
-# Create and use .gitignore file
+## Create and use .gitignore file
 
 Create a `.gitignore` file in the root directory
 
@@ -155,7 +157,7 @@ Create a `.gitignore` file in the root directory
 touch .gitignore
 ```
 
-## Add files or folders to ignore (example)
+### Add files or folders to ignore (example)
 
 ```
 # Ignore node_modules folder
@@ -171,7 +173,7 @@ node_modules/
 .DS_Store
 ```
 
-## Check what Git is ignoring
+### Check what Git is ignoring
 
 ```bash
 git status --ignored
@@ -179,19 +181,21 @@ git status --ignored
 
 <br><br>
 
-## View commit history
+## Manage git logs
+
+### View commit history
 
 ```bash
 git log
 ```
 
-## View summarized commit history
+### View summarized commit history
 
 ```bash
 git log --oneline
 ```
 
-## Undo last commit (without deleting changes)
+### Undo last commit (without deleting changes)
 
 ```bash
 git reset --soft HEAD~1

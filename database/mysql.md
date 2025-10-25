@@ -2,20 +2,20 @@
 <br>
 
 
-## Install MySQL Server
+### Install MySQL Server
 
 ```bash
 sudo apt install mysql-server
 ```
 
-## Enable and start MySQL service
+### Enable and start MySQL service
 
 ```bash
 sudo systemctl enable mysql
 sudo systemctl start mysql
 ```
 
-## Secure MySQL installation
+### Secure MySQL installation
 
 ```bash
 sudo mysql_secure_installation
@@ -28,13 +28,13 @@ During the setup:
 * Disallow remote root login
 * Remove the test database
 
-## Login Localhost to MySQL
+### Login Localhost to MySQL
 
 ```bash
 sudo mysql -u root -p
 ```
 
-## Login Remote host to MySQL
+### Login Remote host to MySQL
 
 ```bash
 mysql -u remote_user -h your-server-ip -p
@@ -45,7 +45,7 @@ mysql -u remote_user -h your-server-ip -p
 mysql -u azmat -h 13.200.27.232 -p
 ```
 
-## Create a new MySQL user
+### Create a new MySQL user
 
 ```sql
 CREATE USER 'username'@'hostname' IDENTIFIED BY 'password';
@@ -57,26 +57,26 @@ CREATE USER 'username'@'hostname' IDENTIFIED BY 'password';
 CREATE USER 'azmat'@'%' IDENTIFIED BY '12345678';
 ```
 
-## Grant all privileges to the user
+### Grant all privileges to the user
 
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'azmat'@'%' WITH GRANT OPTION;
 ```
 
-## Grant privileges for a specific database
+### Grant privileges for a specific database
 
 ```sql
 GRANT ALL PRIVILEGES ON mydb.* TO 'azmat'@'%' WITH GRANT OPTION;
 ```
 
-## Apply changes and exit
+### Apply changes and exit
 
 ```sql
 FLUSH PRIVILEGES;
 EXIT;
 ```
 
-## To show all users in MySQL
+### To show all users in MySQL
 ```sql
 SELECT User, Host FROM mysql.user;
 ```
