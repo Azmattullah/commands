@@ -83,7 +83,7 @@ SELECT User, Host FROM mysql.user;
 
 <br><br>
 
-# Delete a user in MySQL
+## Delete a user in MySQL
 
 ```sql
 USE mysql;
@@ -106,7 +106,7 @@ EXIT;
 
 <br><br>
 
-# Allow remote access to MySQL
+## Allow remote access to MySQL
 
 Open the MySQL configuration file:
 

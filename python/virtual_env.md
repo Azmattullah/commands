@@ -34,7 +34,6 @@ source env/bin/activate
 deactivate
 ```
 
----
 
 <br><br>
 

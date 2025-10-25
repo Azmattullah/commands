@@ -67,7 +67,7 @@ EXIT;
 
 <br><br>
 
-# Delete a user in MariaDB
+## Delete a user in MariaDB
 
 ```bash
 mysql -u root -p
@@ -92,7 +92,7 @@ EXIT;
 
 <br><br>
 
-# Allow remote access to MariaDB
+## Allow remote access to MariaDB
 
 Open the MariaDB configuration file:
 
@@ -117,4 +117,34 @@ Restart MariaDB service and allow firewall port:
 ```bash
 sudo systemctl restart mariadb
 sudo ufw allow 3306
+```
+
+<br><br>
+
+## To remove MariaDB database
+
+### Stop the MariaDB Service
+```
+sudo systemctl stop mariadb
+```
+
+### Uninstall MariaDB Server
+```
+sudo apt-get purge mariadb-server mariadb-client mariadb-common mariadb-server-core-* mariadb-client-core-*
+```
+
+### Remove the Database Files (optional)
+```
+sudo rm -rf /var/lib/mysql
+```
+
+### Remove Configuration Files (optional)
+```
+sudo rm -rf /etc/mysql
+sudo rm -rf /etc/mysql.conf.d
+```
+
+### Clean Up Dependencies
+```
+sudo apt-get autoremove
 ```
