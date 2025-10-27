@@ -23,6 +23,15 @@ su azmat
 ```bash
 sudo usermod -aG sudo azmat
 ```
+### Create `.ssh` directory and authorized_keys for user `azmat`
+
+```bash
+sudo mkdir -p /home/azmat/.ssh
+sudo touch /home/azmat/.ssh/authorized_keys
+sudo chmod 700 /home/azmat/.ssh
+sudo chmod 600 /home/azmat/.ssh/authorized_keys
+sudo chown -R azmat:azmat /home/azmat/.ssh
+```
 
 ### Edit SSH configuration file
 
@@ -38,7 +47,7 @@ PasswordAuthentication yes
 KbdInteractiveAuthentication yes
 #PermitEmptyPasswords no
 UsePAM yes
-AllowUsers azmat
+AllowUsers azmat ubuntu
 PermitRootLogin yes   # Only if root login is required
 ```
 
@@ -48,6 +57,13 @@ PermitRootLogin yes   # Only if root login is required
 sudo systemctl restart ssh
 ```
 
+### Test configuration
+
+```bash
+sudo sshd -t
+```
+
+<br><br>
 ### Fix SSH host key mismatch error (Error 001)
 
 linux711 is username of local system
