@@ -132,3 +132,61 @@ Restart MySQL service and allow firewall port:
 sudo systemctl restart mysql
 sudo ufw allow 3306
 ```
+
+
+<br><br>
+
+
+## Completely Remove MySQL from Linux
+
+
+###  Step 1: Stop the MySQL Service
+
+```bash
+sudo systemctl stop mysql
+```
+
+---
+
+###  Step 2: Remove MySQL Packages
+
+```bash
+sudo apt-get remove --purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+```
+
+---
+
+###  Step 3: Remove Unused Dependencies
+
+```bash
+sudo apt-get autoremove -y
+sudo apt-get autoclean
+```
+
+---
+
+###  Step 4: Delete MySQL Data and Configuration Files
+
+```bash
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo rm -rf /var/log/mysql /var/log/mysql.*
+```
+
+---
+
+###  Step 5: Remove MySQL User and Group
+
+```bash
+sudo deluser mysql
+sudo delgroup mysql
+```
+
+---
+
+###  Step 6: Verify MySQL is Completely Removed
+
+```bash
+dpkg -l | grep mysql
+```
+
+*(No output means MySQL has been fully removed)*
